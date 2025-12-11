@@ -24,7 +24,11 @@ SECRET_KEY = 'django-insecure-nryot@3p!(z8sjmi2sjhqe3w(*=2^c+^)2l(ownfk$ex+hhhk=
 DEBUG = True
 
 # Hosts allowed to access the app
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'student-portal-b818.onrender.com',
+]
 
 
 
