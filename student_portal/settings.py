@@ -155,6 +155,15 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import os
+from django.contrib.auth.models import User
+
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+if os.environ.get('RENDER_SUPERUSER') == 'true':
+    if not User.objects.filter(username='admin').exists():
+        User.objects.create_superuser(
+            'admin',
+            'admin@example.com',
+            'Admin12345'
+        )
